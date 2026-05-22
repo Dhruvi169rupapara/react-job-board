@@ -10,6 +10,7 @@ import Jobs from "./pages/Jobs.jsx";
 import Layout from "./components/Layout.jsx";
 import {store} from "./redux/store.js";
 import {Provider} from "react-redux";
+import AdminJobs from "./pages/Admin/AdminJobs.jsx";
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
 
                           <Route element={ <ProtectedRoute allowedRoles={["admin"]} /> }>
                               <Route path="/dashboard" element={<Dashboard />} />
+                              <Route path="/admin-jobs" element={<AdminJobs />} />
                           </Route>
 
                           <Route element={ <ProtectedRoute allowedRoles={["user"]} /> }>
