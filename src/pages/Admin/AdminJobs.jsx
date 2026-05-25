@@ -1,9 +1,11 @@
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchJobs} from "../../redux/slices/jobSlice.js";
+import {useNavigate} from "react-router-dom";
 
 function AdminJobs () {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const {jobList, loading, error} = useSelector((state) => state.jobs);
 
     useEffect(() => {
@@ -34,6 +36,7 @@ function AdminJobs () {
                                     WebkitBoxOrient: 'vertical',
                                     overflow: 'hidden'
                                 }}>{job.body}</p>
+                                <p className={'text-sm text-blue-400 font-bold cursor-pointer'} onClick={() => navigate(`/admin-job/${job.id}`)}>Explore more</p>
                             </div>
                         </div>
                     </div>

@@ -13,7 +13,10 @@ function Header() {
                 {user ? (
                     <>
                         {user.role === 'admin' ? (
-                            <Link to="/dashboard" className="hover:underline text-white">Dashboard</Link>
+                            <>
+                                <Link to="/dashboard" className="hover:underline text-white">Dashboard</Link>
+                                <Link to="/admin-jobs" className="hover:underline text-white">Jobs</Link>
+                            </>
                         ) : (
                             <Link to="/jobs" className="hover:underline text-white">Jobs</Link>
                         )}
